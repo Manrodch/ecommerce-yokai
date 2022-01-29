@@ -1,0 +1,11 @@
+[33mcommit 35a5e5944c8ec4250ca1ac38e706af007bc14360[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: unknown <manuel.rodriguez.ch1@gmail.com>
+Date:   Sat Jan 29 02:03:55 2022 -0300
+
+    Agregado nav bar, imagenes y mensajes en item list
+
+[33mcommit dc5a40d5b9f521e0f8f7051a21b74c55e91d3da1[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: unknown <manuel.rodriguez.ch1@gmail.com>
+Date:   Fri Jan 21 17:14:58 2022 -0300
+
+    Initialize project using Create React App
