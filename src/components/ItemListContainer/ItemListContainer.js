@@ -1,4 +1,4 @@
-import "./ItemList.css";
+import "./ItemList.scss";
 import Sepuku from "./Sepuku.png";
 export const ItemListContainer = ({ greeting }) => {
   return (
