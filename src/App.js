@@ -1,5 +1,6 @@
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
 import { NavBar } from "./components/NavBar/NavBar";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/styles.scss";
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <>
       <NavBar />
 
-      <ItemListContainer greeting="Hello yokai!!! here will be displayed our last nft collection" />
+      <ItemListContainer />
     </>
   );
 }
