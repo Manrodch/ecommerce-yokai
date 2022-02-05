@@ -6,9 +6,9 @@ export const NavBar = () => {
     <header className="header">
       <img src={Yokai}></img>
       <nav className="header-nav ">
-        <p className="header-link">Enlace 1</p>
-        <p className="header-link">Enlace 2</p>
-        <p className="header-link">Enlace 3</p>
+        <p className="header-link">About us</p>
+        <p className="header-link">For your walls</p>
+        <p className="header-link">Clothing</p>
       </nav>
       <img src={Cart}></img>
     </header>

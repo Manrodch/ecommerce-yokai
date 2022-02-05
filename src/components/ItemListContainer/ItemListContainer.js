@@ -1,13 +1,26 @@
 import "./ItemList.scss";
-import { Product } from "../Product/Product";
-import Sepuku from "./Sepuku.png";
+import { useEffect, useState } from "react";
+import { askData } from "../../helpers/askData";
+import { ItemList } from "../Itemlist/ItemList";
+export const ItemListContainer = () => {
+  const [Items, setItems] = useState([]);
 
-export const ItemListContainer = ({ greeting }) => {
+  useEffect(() => {
+    askData()
+      .then((res) => {
+        setItems(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        console.log("finished process");
+      });
+  }, []);
+
   return (
-    <section className="item-list-container">
-      <Product title="Sepuku" content="Ritual de Sepuku" />
-      <Product title="Tengu" content="Ritual de Sepuku" />
-      <Product title="Sepuku" content="Ritual de Sepuku" />
-    </section>
+    <div>
+      <ItemList Items={Items} />
+    </div>
   );
 };
