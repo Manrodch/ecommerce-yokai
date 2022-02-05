@@ -4,8 +4,11 @@ import { askData } from "../../helpers/askData";
 import { ItemList } from "../Itemlist/ItemList";
 export const ItemListContainer = () => {
   const [Items, setItems] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
+
     askData()
       .then((res) => {
         setItems(res);
@@ -14,13 +17,11 @@ export const ItemListContainer = () => {
         console.log(err);
       })
       .finally(() => {
-        console.log("finished process");
+        setLoading(false);
       });
   }, []);
 
   return (
-    <div>
-      <ItemList Items={Items} />
-    </div>
+    <div>{loading ? <h2>Loading...</h2> : <ItemList Items={Items} />}</div>
   );
 };
