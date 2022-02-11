@@ -9,7 +9,6 @@ export const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
 
   const { itemId } = useParams();
-  console.log(itemId);
 
   useEffect(() => {
     setLoading(true);
@@ -25,7 +24,7 @@ export const ItemDetailContainer = () => {
 
   return (
     <div className="container my-5">
-      {/* {loading ? <h2>loading</h2> : <ItemDetail {...item} />} */}
+      {loading ? <h2>loading</h2> : <ItemDetail {...item} />}
     </div>
   );
 };
