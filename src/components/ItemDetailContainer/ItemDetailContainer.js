@@ -14,13 +14,13 @@ export const ItemDetailContainer = () => {
     setLoading(true);
     askData()
       .then((res) => {
-        setItem(res.find((el) => el.id === Number(itemId)));
+        setItem(res.find((el) => Number(el.id) === Number(itemId)));
       })
 
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [itemId]);
 
   return (
     <div className="container my-5">

@@ -5,7 +5,7 @@ export const stock = [
     disc: "lorem coso japo",
     price: 100,
     img: "/img/Sepuku.png",
-    stock: 50,
+    stock: 10,
     category: "yokais",
   },
   {
@@ -14,7 +14,7 @@ export const stock = [
     disc: "lorem coso japo",
     price: 100,
     img: "/img/Sepuku.png",
-    stock: 50,
+    stock: 10,
     category: "yokais",
   },
   {
@@ -23,7 +23,7 @@ export const stock = [
     disc: "lorem coso japo",
     price: 100,
     img: "/img/Sepuku.png",
-    stock: 50,
+    stock: 10,
     category: "yokais",
   },
   {
@@ -32,7 +32,7 @@ export const stock = [
     disc: "lorem coso japo",
     price: 100,
     img: "/img/Sepuku.png",
-    stock: 50,
+    stock: 10,
     category: "yokais",
   },
   {
@@ -41,7 +41,7 @@ export const stock = [
     disc: "lorem coso japo",
     price: 100,
     img: "/img/Sepuku.png",
-    stock: 50,
+    stock: 10,
     category: "yokais",
   },
   {
@@ -50,7 +50,7 @@ export const stock = [
     disc: "lorem coso japo",
     price: 100,
     img: "/img/Sepuku.png",
-    stock: 50,
+    stock: 10,
     category: "yokais",
   },
   {
@@ -59,7 +59,7 @@ export const stock = [
     disc: "lorem coso japo",
     price: 100,
     img: "/img/Sepuku.png",
-    stock: 50,
+    stock: 10,
     category: "yokais",
   },
   {
@@ -68,7 +68,7 @@ export const stock = [
     disc: "lorem coso japo",
     price: 100,
     img: "/img/Sepuku.png",
-    stock: 50,
+    stock: 10,
     category: "yokais",
   },
   {
@@ -77,7 +77,7 @@ export const stock = [
     disc: "lorem coso japo",
     price: 100,
     img: "/img/Sepuku.png",
-    stock: 50,
+    stock: 10,
     category: "kugosan",
   },
   {
@@ -86,7 +86,7 @@ export const stock = [
     disc: "lorem coso japo",
     price: 100,
     img: "/img/Sepuku.png",
-    stock: 50,
+    stock: 10,
     category: "kugosan",
   },
   {
@@ -95,7 +95,7 @@ export const stock = [
     disc: "lorem coso japo",
     price: 100,
     img: "/img/Sepuku.png",
-    stock: 50,
+    stock: 10,
     category: "kugosan",
   },
   {
@@ -104,7 +104,7 @@ export const stock = [
     disc: "lorem coso japo",
     price: 100,
     img: "/img/Sepuku.png",
-    stock: 50,
+    stock: 10,
     category: "kugosan",
   },
   {
@@ -113,7 +113,7 @@ export const stock = [
     disc: "lorem coso japo",
     price: 100,
     img: "/img/Sepuku.png",
-    stock: 50,
+    stock: 10,
     category: "kugosan",
   },
   {
@@ -122,7 +122,7 @@ export const stock = [
     disc: "lorem coso japo",
     price: 100,
     img: "/img/Sepuku.png",
-    stock: 50,
+    stock: 10,
     category: "kugosan",
   },
   {
@@ -131,7 +131,7 @@ export const stock = [
     disc: "lorem coso japo",
     price: 100,
     img: "/img/Sepuku.png",
-    stock: 50,
+    stock: 10,
     category: "kugosan",
   },
 
@@ -141,7 +141,7 @@ export const stock = [
     disc: "lorem coso japo",
     price: 100,
     img: "/img/Sepuku.png",
-    stock: 50,
+    stock: 10,
     category: "redfang",
   },
   {
@@ -150,7 +150,7 @@ export const stock = [
     disc: "lorem coso japo",
     price: 100,
     img: "/img/Sepuku.png",
-    stock: 50,
+    stock: 10,
     category: "redfang",
   },
   {
@@ -159,7 +159,7 @@ export const stock = [
     disc: "lorem coso japo",
     price: 100,
     img: "/img/Sepuku.png",
-    stock: 50,
+    stock: 10,
     category: "redfang",
   },
   {
@@ -168,7 +168,7 @@ export const stock = [
     disc: "lorem coso japo",
     price: 100,
     img: "/img/Sepuku.png",
-    stock: 50,
+    stock: 10,
     category: "redfang",
   },
 ];
