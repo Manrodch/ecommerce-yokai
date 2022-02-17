@@ -1,8 +1,12 @@
-import { react, useState } from "react";
+import { useContext, useState } from "react";
+import { KartContext } from "../../Context/KartContext";
 import { ItemCount } from "../ItemCount/ItemCount";
 
 export const ItemDetail = ({ id, name, img, disc, price, stock, category }) => {
   const [amount, setAmount] = useState(0);
+
+  const { kart, addToKart } = useContext(KartContext);
+  console.log(kart);
 
   const handleAddToKart = () => {
     if (amount === 0) return;
@@ -14,7 +18,7 @@ export const ItemDetail = ({ id, name, img, disc, price, stock, category }) => {
       amount,
     };
 
-    console.log(addItem);
+    addToKart(addItem);
   };
 
   return (
