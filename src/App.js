@@ -6,6 +6,7 @@ import { AboutUs } from "./components/AboutUs";
 import { Contact } from "./components/Contact";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer.js";
+import { Form } from "./components/Form/Form";
 function App() {
   return (
     <BrowserRouter>

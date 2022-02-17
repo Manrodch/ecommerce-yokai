@@ -1,14 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export const ItemCount = () => {
-  const [counter, setCounter] = useState(0);
-
+export const ItemCount = ({ max, min = 0, counter, setCounter }) => {
   const handleAdd = (e) => {
-    setCounter(counter + 1);
+    counter < max && setCounter(counter + 1);
   };
 
-  const handleRemove = (e) => {
-    setCounter(counter - 1);
+  const handleRemove = () => {
+    counter > min && setCounter(counter - 1);
   };
 
   return (
