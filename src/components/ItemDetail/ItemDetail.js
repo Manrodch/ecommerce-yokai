@@ -34,7 +34,7 @@ export const ItemDetail = ({ id, name, img, disc, price, stock, category }) => {
       <h5>Precio: ${price}</h5>
 
       {isInKart(id) ? (
-        <Link to="./kart" className="btn btn-success my-2">
+        <Link to="/kart" className="btn btn-success my-2">
           Checkout
         </Link>
       ) : (

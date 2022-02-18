@@ -2,42 +2,14 @@ import { ItemListContainer } from "./components/ItemListContainer/ItemListContai
 import { NavBar } from "./components/NavBar/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/styles.scss";
-import { AboutUs } from "./components/AboutUs";
-import { Contact } from "./components/Contact";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer.js";
-import { KartContext } from "./Context/KartContext";
-import { useState } from "react";
+import { KartProvider } from "./Context/KartContext";
+import { Kart } from "./components/Kart/kart";
 
 function App() {
-  const [kart, setKart] = useState([]);
-
-  const addToKart = (item) => {
-    console.log(isInKart(item.id));
-    setKart([...kart, item]);
-  };
-
-  const isInKart = (id) => {
-    return kart.some((item) => item.id === id);
-  };
-
-  const kartAmount = () => {
-    return kart.reduce((acc, item) => acc + item.amount, 0);
-  };
-  const kartTotal = () => {
-    return kart.reduce((acc, item) => acc + item.amount * item.price, 0);
-  };
-
   return (
-    <KartContext.Provider
-      value={{
-        kart,
-        addToKart,
-        isInKart,
-        kartAmount,
-        kartTotal,
-      }}
-    >
+    <KartProvider>
       <BrowserRouter>
         <NavBar />
 
@@ -48,12 +20,11 @@ function App() {
             path="/detail/:itemId"
             element={<ItemDetailContainer />}
           ></Route>
-          <Route path="/AboutUs" element={<AboutUs />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/kart" element={<Kart />} />
           <Route path="*" element={<Navigate to="/" />}></Route>
         </Routes>
       </BrowserRouter>
-    </KartContext.Provider>
+    </KartProvider>
   );
 }
 
