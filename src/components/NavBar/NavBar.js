@@ -1,12 +1,12 @@
 import "./NavBar.scss";
 import Yokai from "./Yokai.png";
-import Cart from "./Cart.png";
 import { Link } from "react-router-dom";
+import { KartWidget } from "../KartWidget/Kartwidget";
 
 export const NavBar = () => {
   return (
     <header className="header">
-      <Link to="7">
+      <Link to="/">
         <img src={Yokai}></img>
       </Link>
 
@@ -20,8 +20,8 @@ export const NavBar = () => {
         <Link to="/items/redfang" className="header-link">
           Red Fang
         </Link>
+        <KartWidget />
       </nav>
-      <img src={Cart}></img>
     </header>
   );
 };

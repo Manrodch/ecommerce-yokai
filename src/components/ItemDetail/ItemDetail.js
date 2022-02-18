@@ -1,24 +1,29 @@
 import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { KartContext } from "../../Context/KartContext";
 import { ItemCount } from "../ItemCount/ItemCount";
 
 export const ItemDetail = ({ id, name, img, disc, price, stock, category }) => {
   const [amount, setAmount] = useState(0);
 
-  const { kart, addToKart } = useContext(KartContext);
+  const { kart, addToKart, isInKart } = useContext(KartContext);
+
   console.log(kart);
 
   const handleAddToKart = () => {
     if (amount === 0) return;
-    const addItem = {
-      id,
-      name,
-      price,
-      stock,
-      amount,
-    };
 
-    addToKart(addItem);
+    if (!isInKart(id)) {
+      const addItem = {
+        id,
+        name,
+        price,
+        stock,
+        amount,
+      };
+
+      addToKart(addItem);
+    }
   };
 
   return (
@@ -28,10 +33,18 @@ export const ItemDetail = ({ id, name, img, disc, price, stock, category }) => {
       <p>{disc}</p>
       <h5>Precio: ${price}</h5>
 
-      <ItemCount max={stock} counter={amount} setCounter={setAmount} />
-      <button className="btn btn-success my-2 " onClick={handleAddToKart}>
-        Add to kart
-      </button>
+      {isInKart(id) ? (
+        <Link to="./kart" className="btn btn-success my-2">
+          Checkout
+        </Link>
+      ) : (
+        <>
+          <ItemCount max={stock} counter={amount} setCounter={setAmount} />
+          <button className="btn btn-success my-2 " onClick={handleAddToKart}>
+            Add to kart
+          </button>
+        </>
+      )}
     </div>
   );
 };

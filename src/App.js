@@ -8,11 +8,24 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer.js";
 import { KartContext } from "./Context/KartContext";
 import { useState } from "react";
+
 function App() {
   const [kart, setKart] = useState([]);
 
   const addToKart = (item) => {
+    console.log(isInKart(item.id));
     setKart([...kart, item]);
+  };
+
+  const isInKart = (id) => {
+    return kart.some((item) => item.id === id);
+  };
+
+  const kartAmount = () => {
+    return kart.reduce((acc, item) => acc + item.amount, 0);
+  };
+  const kartTotal = () => {
+    return kart.reduce((acc, item) => acc + item.amount * item.price, 0);
   };
 
   return (
@@ -20,6 +33,9 @@ function App() {
       value={{
         kart,
         addToKart,
+        isInKart,
+        kartAmount,
+        kartTotal,
       }}
     >
       <BrowserRouter>
