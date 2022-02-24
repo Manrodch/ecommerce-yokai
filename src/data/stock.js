@@ -7,6 +7,7 @@ export const stock = [
     img: "/img/Sepuku.png",
     stock: 10,
     category: "yokais",
+    sale: true,
   },
   {
     id: "2",
@@ -16,6 +17,7 @@ export const stock = [
     img: "/img/Sepuku.png",
     stock: 10,
     category: "yokais",
+    sale: false,
   },
   {
     id: "3",
@@ -25,6 +27,7 @@ export const stock = [
     img: "/img/Sepuku.png",
     stock: 10,
     category: "yokais",
+    sale: true,
   },
   {
     id: "4",
@@ -34,6 +37,7 @@ export const stock = [
     img: "/img/Sepuku.png",
     stock: 10,
     category: "yokais",
+    sale: false,
   },
   {
     id: "5",
@@ -43,6 +47,7 @@ export const stock = [
     img: "/img/Sepuku.png",
     stock: 10,
     category: "yokais",
+    sale: false,
   },
   {
     id: "6",
@@ -52,6 +57,7 @@ export const stock = [
     img: "/img/Sepuku.png",
     stock: 10,
     category: "yokais",
+    sale: false,
   },
   {
     id: "7",
@@ -61,6 +67,7 @@ export const stock = [
     img: "/img/Sepuku.png",
     stock: 10,
     category: "yokais",
+    sale: true,
   },
   {
     id: "8",
@@ -70,6 +77,7 @@ export const stock = [
     img: "/img/Sepuku.png",
     stock: 10,
     category: "yokais",
+    sale: false,
   },
   {
     id: "9",
@@ -79,6 +87,7 @@ export const stock = [
     img: "/img/Sepuku.png",
     stock: 10,
     category: "kugosan",
+    sale: false,
   },
   {
     id: "10",
@@ -88,6 +97,7 @@ export const stock = [
     img: "/img/Sepuku.png",
     stock: 10,
     category: "kugosan",
+    sale: false,
   },
   {
     id: "11",
@@ -97,6 +107,7 @@ export const stock = [
     img: "/img/Sepuku.png",
     stock: 10,
     category: "kugosan",
+    sale: true,
   },
   {
     id: "12",
@@ -106,6 +117,7 @@ export const stock = [
     img: "/img/Sepuku.png",
     stock: 10,
     category: "kugosan",
+    sale: false,
   },
   {
     id: "13",
@@ -115,6 +127,7 @@ export const stock = [
     img: "/img/Sepuku.png",
     stock: 10,
     category: "kugosan",
+    sale: false,
   },
   {
     id: "14",
@@ -124,6 +137,7 @@ export const stock = [
     img: "/img/Sepuku.png",
     stock: 10,
     category: "kugosan",
+    sale: true,
   },
   {
     id: "15",
@@ -133,6 +147,7 @@ export const stock = [
     img: "/img/Sepuku.png",
     stock: 10,
     category: "kugosan",
+    sale: false,
   },
 
   {
@@ -143,6 +158,7 @@ export const stock = [
     img: "/img/Sepuku.png",
     stock: 10,
     category: "redfang",
+    sale: false,
   },
   {
     id: "17",
@@ -152,6 +168,7 @@ export const stock = [
     img: "/img/Sepuku.png",
     stock: 10,
     category: "redfang",
+    sale: true,
   },
   {
     id: "18",
@@ -161,6 +178,7 @@ export const stock = [
     img: "/img/Sepuku.png",
     stock: 10,
     category: "redfang",
+    sale: false,
   },
   {
     id: "19",
@@ -170,5 +188,6 @@ export const stock = [
     img: "/img/Sepuku.png",
     stock: 10,
     category: "redfang",
+    sale: true,
   },
 ];

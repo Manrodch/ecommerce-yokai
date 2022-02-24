@@ -21,6 +21,14 @@ export const KartProvider = ({ children }) => {
     return kart.reduce((acc, item) => acc + item.amount * item.price, 0);
   };
 
+  const EmptyKart = () => {
+    setKart([]);
+  };
+
+  const RemoveItem = (id) => {
+    setKart(kart.filter((item) => item.id !== id));
+  };
+
   return (
     <KartContext.Provider
       value={{
@@ -29,6 +37,8 @@ export const KartProvider = ({ children }) => {
         isInKart,
         kartAmount,
         kartTotal,
+        EmptyKart,
+        RemoveItem,
       }}
     >
       {children}

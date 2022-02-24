@@ -30,7 +30,5 @@ export const ItemListContainer = () => {
       });
   }, [catId]);
 
-  return (
-    <div>{loading ? <h2>Loading...</h2> : <ItemList Items={Items} />}</div>
-  );
+  return <>{loading ? <h2>Loading...</h2> : <ItemList Items={Items} />}</>;
 };

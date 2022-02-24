@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { ConfigBtns } from "./ConfigBtns";
 
 export const ItemCount = ({ max, min = 0, counter, setCounter }) => {
   const handleAdd = (e) => {
@@ -9,15 +9,18 @@ export const ItemCount = ({ max, min = 0, counter, setCounter }) => {
     counter > min && setCounter(counter - 1);
   };
 
+  const { configRemove, configAdd } = ConfigBtns(
+    counter,
+    max,
+    min,
+    handleAdd,
+    handleRemove
+  );
   return (
     <div>
-      <button onClick={handleRemove} className=" btn btn-outline-primary ">
-        -
-      </button>
+      <button {...configRemove}>-</button>
       <span className="mx-3"> {counter} </span>
-      <button onClick={handleAdd} className=" btn btn-primary ">
-        +
-      </button>
+      <button {...configAdd}>+</button>
     </div>
   );
 };

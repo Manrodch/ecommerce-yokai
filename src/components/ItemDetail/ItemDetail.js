@@ -3,7 +3,16 @@ import { Link } from "react-router-dom";
 import { KartContext } from "../../Context/KartContext";
 import { ItemCount } from "../ItemCount/ItemCount";
 
-export const ItemDetail = ({ id, name, img, disc, price, stock, category }) => {
+export const ItemDetail = ({
+  id,
+  name,
+  img,
+  disc,
+  price,
+  stock,
+  sale,
+  category,
+}) => {
   const [amount, setAmount] = useState(0);
 
   const { kart, addToKart, isInKart } = useContext(KartContext);

@@ -4,6 +4,6 @@ export const askData = (res) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(stock);
-    }, 3000);
+    }, 1000);
   });
 };
