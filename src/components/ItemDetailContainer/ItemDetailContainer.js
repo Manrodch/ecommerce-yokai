@@ -1,26 +1,27 @@
 import { useEffect, useState } from "react";
 import { React } from "react";
 import { useParams } from "react-router-dom";
-import { askData } from "../../helpers/askData";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
+import { db } from "../../firebase/config";
+import { doc, getDoc } from "firebase/firestore";
 
 export const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(false);
   const [item, setItem] = useState(null);
-
   const { itemId } = useParams();
 
   useEffect(() => {
     setLoading(true);
-    askData()
-      .then((res) => {
-        setItem(res.find((el) => Number(el.id) === Number(itemId)));
-      })
+    const docRef = doc(db, "products", itemId);
 
+    getDoc(docRef)
+      .then((doc) => {
+        setItem({ id: doc.id, ...doc.data() });
+      })
       .finally(() => {
         setLoading(false);
       });
-  }, [itemId]);
+  }, []);
 
   return (
     <div className="container my-5">
