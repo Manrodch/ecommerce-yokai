@@ -1,9 +1,28 @@
+import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { useContext, useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 import { KartContext } from "../../Context/KartContext";
+import { db } from "../../firebase/config";
 
 export const Checkout = () => {
   const { kart, kartTotal } = useContext(KartContext);
+
+  const [orderId, setOrderId] = useState(null);
+
+  const generateOrder = () => {
+    const order = {
+      buyer: values,
+      items: kart,
+      total: kartTotal(),
+      dateHour: Timestamp.fromDate(new Date()),
+    };
+
+    const ordersref = collection(db, "orders");
+    addDoc(ordersref, order).then((doc) => {
+      console.log(doc.id);
+      setOrderId(doc.id);
+    });
+  };
 
   const [values, setValues] = useState({
     name: "",
@@ -33,14 +52,21 @@ export const Checkout = () => {
       alert("Invalid phone");
       return;
     }
-
-    const order = {
-      buyer: values,
-      items: kart,
-      total: kartTotal(),
-    };
-    console.log(order);
+    generateOrder();
   };
+
+  if (orderId) {
+    return (
+      <>
+        <h2>Thanks for buying</h2>
+        <hr />
+        <h3>Your ID order is: {orderId} </h3>
+        <Link to="/" className="btn btn-primary">
+          Go back
+        </Link>
+      </>
+    );
+  }
 
   if (kart.length === 0) {
     return <Navigate to="/" />;
