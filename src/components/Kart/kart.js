@@ -42,7 +42,9 @@ export const Kart = () => {
           Empty Kart
         </button>
 
-        <button className="btn btn-success mx-2">Finish shopping</button>
+        <Link to="/checkout" className="btn btn-success mx-2">
+          Finish shopping
+        </Link>
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer.js";
 import { KartProvider } from "./Context/KartContext";
 import { Kart } from "./components/Kart/kart";
+import { Checkout } from "./components/Checkout/Checkout";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             element={<ItemDetailContainer />}
           ></Route>
           <Route path="/kart" element={<Kart />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="*" element={<Navigate to="/" />}></Route>
         </Routes>
       </BrowserRouter>
