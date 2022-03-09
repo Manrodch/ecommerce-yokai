@@ -1,15 +1,24 @@
-import { collection, addDoc, Timestamp } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  Timestamp,
+  where,
+  writeBatch,
+  query,
+  documentId,
+  getDocs,
+} from "firebase/firestore";
 import { useContext, useState } from "react";
 import { Navigate, Link } from "react-router-dom";
 import { KartContext } from "../../Context/KartContext";
 import { db } from "../../firebase/config";
 
 export const Checkout = () => {
-  const { kart, kartTotal } = useContext(KartContext);
+  const { kart, kartTotal, EmptyKart } = useContext(KartContext);
 
   const [orderId, setOrderId] = useState(null);
 
-  const generateOrder = () => {
+  const generateOrder = async () => {
     const order = {
       buyer: values,
       items: kart,
@@ -17,11 +26,42 @@ export const Checkout = () => {
       dateHour: Timestamp.fromDate(new Date()),
     };
 
-    const ordersref = collection(db, "orders");
-    addDoc(ordersref, order).then((doc) => {
-      console.log(doc.id);
-      setOrderId(doc.id);
+    const batch = writeBatch(db);
+    const ordersRef = collection(db, "orders");
+    const productsRef = collection(db, "products");
+
+    const q = query(
+      productsRef,
+      where(
+        documentId(),
+        "in",
+        kart.map((el) => el.id)
+      )
+    );
+    const products = await getDocs(q);
+    const outOfStock = [];
+
+    products.docs.forEach((doc) => {
+      const itemUpdate = kart.find((el) => el.id === doc.id);
+
+      if (doc.data().stock >= itemUpdate.amount) {
+        batch.update(doc.ref, {
+          stock: doc.data().stock - itemUpdate.amount,
+        });
+      } else {
+        outOfStock.push(itemUpdate);
+      }
     });
+
+    if (outOfStock.length === 0) {
+      addDoc(ordersRef, order).then((doc) => {
+        batch.commit();
+        setOrderId(doc.id);
+        EmptyKart();
+      });
+    } else {
+      alert("items out of stock");
+    }
   };
 
   const [values, setValues] = useState({
@@ -57,14 +97,14 @@ export const Checkout = () => {
 
   if (orderId) {
     return (
-      <>
+      <div className="container my-5">
         <h2>Thanks for buying</h2>
         <hr />
         <h3>Your ID order is: {orderId} </h3>
         <Link to="/" className="btn btn-primary">
           Go back
         </Link>
-      </>
+      </div>
     );
   }
 
